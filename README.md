@@ -1,10 +1,7 @@
-# Hello, I'm CHANGEME
-<a href="https://linkedin.com"><img src="https://img.shields.io/badge/-LinkedIn-0072b1?&style=for-the-badge&logo=linkedin&logoColor=white" /></a>
+# Hello, I'm Paul Cumiskey
+<a href="https://www.linkedin.com/in/paul-cumiskey-09a2b3336/"><img src="https://img.shields.io/badge/-LinkedIn-0072b1?&style=for-the-badge&logo=linkedin&logoColor=white" /></a>
 
-[Brief Introduction - Remove this afterwards]
-
-I am a recent graduate with a profound interest in technology and a dedication to solving complex problems.
-
+Aspiring SOC Analyst and Cybersecurity student with hands-on experience in Splunk SIEM, alert triage, and incident response. CompTIA Security+ and CySA+ certified, with a strong focus on threat detection, log analysis, and blue team operations. This portfolio showcases my SOC labs, detection projects, and security research as I continue building real-world defensive skills.
 ## Objective
 [Provide Objective - Remove this afterwards]]
 
