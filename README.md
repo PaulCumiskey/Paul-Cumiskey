@@ -3,9 +3,7 @@
 
 Aspiring SOC Analyst and Cybersecurity student with hands-on experience in Splunk SIEM, alert triage, and incident response. CompTIA Security+ and CySA+ certified, with a strong focus on threat detection, log analysis, and blue team operations. This portfolio showcases my SOC labs, detection projects, and security research as I continue building real-world defensive skills.
 ## Objective
-[Provide Objective - Remove this afterwards]]
-
-My journey in computer science has led me to develop a passion for cybersecurity, and I am now eager to transition into this field, specifically aiming to join a Security Operations Center (SOC) as a Tier 1 Analyst.
+To obtain a Tier 1 SOC Analyst position where I can apply my SIEM monitoring, alert triage, and incident response skills to support security operations and continuously grow as a blue team professional.
 
 ## Skills
 [Provide skills and associated project. Make sure to hyperlink the project - Remove this afterwards]]
