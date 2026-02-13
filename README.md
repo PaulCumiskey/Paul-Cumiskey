@@ -16,7 +16,7 @@ To obtain a Tier 1 SOC Analyst position where I can apply my SIEM monitoring, al
 | Incident Response Planning and Execution      | SOC Automation Lab|
 | Case Management with TheHive                  | SOC Automation Lab|
 | Scripting and Automation for Threat Mitigation | SOC Automation Lab|
-| Python | <a href="https://github.com/PaulCumiskey/keystroke_visualizer/blob/main/keystroke%20visualizer">Detection Lab</a>|
+| Python | <a href="https://github.com/PaulCumiskey/keystroke_visualizer/blob/main/keystroke%20visualizer">Keystroke Visualizer</a>|
 
 ## Tools
 [Provide tools and break them down into categories. Use ChatGPT to help create the link - Remove this afterwards]]
