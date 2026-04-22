@@ -100,6 +100,29 @@ Seeking a **Tier 1 SOC Analyst role** where I can contribute to security operati
 
 ---
 
+## 📜 Certifications & Blog Posts
+
+### 🎓 Certifications
+- <a href="https://www.comptia.org/certifications/security">CompTIA Security+</a>
+- <a href="https://www.comptia.org/certifications/cybersecurity-analyst">CompTIA CySA+</a>
+- <a href="https://securityblue.team/why-btl1/">Blue Team Level 1 (BTL1)</a>
+
+---
+
+### ✍️ Certification Write-Ups
+*(Building technical blogs to demonstrate applied knowledge and reinforce concepts)*
+
+- 📝 **Security+ Blog Post** *(add link)*  
+  Topics: Network security, cryptography, risk management, security architecture
+
+- 📝 **CySA+ Blog Post** *(add link)*  
+  Topics: Threat detection, SIEM analysis, incident response, vulnerability management
+
+- 📝 **BTL1 Blog Post** *(add link)*  
+  Topics: SOC operations, log analysis, threat hunting, blue team workflows
+
+---
+
 ## 🚀 Featured Projects
 
 ### 🔍 Detection Lab
