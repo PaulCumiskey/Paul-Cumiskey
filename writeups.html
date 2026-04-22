@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Writeups | Paul Cumiskey</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg: #0b0f1a; --card-bg: #161b2c; --accent: #38bdf8; --text-main: #f8fafc; --text-dim: #94a3b8; --border: #2d3748; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text-main); line-height: 1.6; margin: 0; }
+        .container { max-width: 800px; margin: auto; padding: 4rem 2rem; }
+        header { border-bottom: 1px solid var(--border); padding-bottom: 2rem; margin-bottom: 3rem; }
+        .writeup-card { background: var(--card-bg); padding: 2rem; border-radius: 12px; border: 1px solid var(--border); margin-bottom: 3rem; }
+        h1, h2, h3 { color: var(--accent); }
+        .tag { font-size: 0.75rem; background: rgba(56, 189, 248, 0.1); color: var(--accent); padding: 4px 10px; border-radius: 4px; font-weight: bold; text-transform: uppercase; }
+        pre { background: #000; padding: 1rem; border-radius: 8px; overflow-x: auto; font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; border: 1px solid var(--border); }
+        .back-link { text-decoration: none; color: var(--text-dim); font-size: 0.9rem; margin-bottom: 2rem; display: inline-block; }
+        .back-link:hover { color: var(--accent); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Portfolio</a>
+        <header>
+            <h1>Technical Writeups</h1>
+            <p>A collection of incident reports, lab notes, and detection engineering documentation.</p>
+        </header>
+
+        <article class="writeup-card">
+            <span class="tag">Phishing Analysis</span>
+            <h2>Phishing Investigation: "Urgent Invoice"</h2>
+            <p><strong>Scenario:</strong> Analysis of a suspicious email reported by a user to the SOC mailbox.</p>
+            <h3>Technical Breakdown</h3>
+            <ul>
+                <li><strong>Source:</strong> Traced to <code>193.168.x.x</code> (Russia-based IP).</li>
+                <li><strong>Attachment:</strong> <code>Invoice_992.zip</code> containing an obfuscated JS downloader.</li>
+                <li><strong>Findings:</strong> The script attempts to download a Stage-2 payload from a compromised WordPress site.</li>
+            </ul>
+            <p><em>Outcome: Malicious domains blocked; user credentials reset.</em></p>
+        </article>
+
+        <article class="writeup-card">
+            <span class="tag">SIEM / Detection</span>
+            <h2>Splunk: Detecting RDP Brute Force</h2>
+            <p><strong>Objective:</strong> Create a high-fidelity alert for Event ID 4625 (Failed Login).</p>
+            <h3>The Query</h3>
+            <pre>index=windows sourcetype="XmlWinEventLog:Security" EventCode=4625
+| stats count BY TargetUserName, IpAddress
+| where count > 15</pre>
+            <p><strong>Tuning:</strong> Filtered out service accounts to reduce false positives by 40%.</p>
+        </article>
+
+        <article class="writeup-card">
+            <span class="tag">Traffic Analysis</span>
+            <h2>Network Forensics: Emotet C2 Beaconing</h2>
+            <p><strong>Tools:</strong> Wireshark, Zeek</p>
+            <p>Identified a 60-second "heartbeat" beacon to a suspicious port (8080) using I/O Graphs. Analyzed the HTTP GET request to identify the infected host and the specific malware family.</p>
+        </article>
+
+        <footer>
+            <p style="text-align: center; color: var(--text-dim);">© 2026 Paul Cumiskey</p>
+        </footer>
+    </div>
+</body>
+</html>
