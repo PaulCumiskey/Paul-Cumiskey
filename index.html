@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Paul Cumiskey | SOC Analyst & Security Researcher</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <title>Paul Cumiskey | Detection Engineering & SOC Operations</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --bg: #0b0f1a;
-      --card-bg: #161b2c;
+      --bg: #0f172a;
+      --card-bg: #1e293b;
       --accent: #38bdf8;
-      --accent-glow: rgba(56, 189, 248, 0.2);
-      --text-main: #f8fafc;
+      --accent-glow: rgba(56, 189, 248, 0.15);
+      --text-main: #f1f5f9;
       --text-dim: #94a3b8;
-      --border: #2d3748;
+      --border: #334155;
     }
 
     * { box-sizing: border-box; }
@@ -25,447 +25,244 @@
       background: var(--bg);
       color: var(--text-main);
       line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
     }
 
     .container {
-      max-width: 1000px;
+      max-width: 900px;
       margin: auto;
-      padding: 4rem 2rem;
+      padding: 5rem 2rem;
     }
 
-    /* Header Section */
     header {
-      text-align: left;
-      margin-bottom: 4rem;
-      border-left: 4px solid var(--accent);
-      padding-left: 1.5rem;
+      margin-bottom: 5rem;
     }
 
     header h1 {
-      font-size: 3rem;
+      font-size: 3.5rem;
       margin: 0;
-      letter-spacing: -1px;
+      font-weight: 700;
+      letter-spacing: -0.025em;
     }
 
     .subtitle {
-      font-size: 1.25rem;
+      font-size: 1.1rem;
       color: var(--accent);
-      font-weight: 600;
-      margin-top: 5px;
+      font-family: 'JetBrains Mono', monospace;
+      margin-bottom: 1.5rem;
     }
 
-    /* Cards */
-    .card {
-      background: var(--card-bg);
-      padding: 2rem;
-      border-radius: 12px;
-      margin-bottom: 2rem;
-      border: 1px solid var(--border);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-    }
-
-    h2 {
-      font-size: 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-top: 0;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 10px;
-    }
-
-    /* Skill Grid */
-    .skills-wrapper {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-    }
-
-    .skill-category h3 {
+    .nav-links {
+      display: flex; 
+      gap: 24px; 
+      margin: 2rem 0;
       font-size: 0.9rem;
       text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .nav-links a {
       color: var(--text-dim);
-      letter-spacing: 1px;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--accent); }
+
+    h2 {
+      font-size: 1.25rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-dim);
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.5rem;
+    }
+
+    .card {
+      background: transparent;
+      margin-bottom: 4rem;
+    }
+
+    .exp-item, .project-item {
+      margin-bottom: 2.5rem;
+    }
+
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.5rem;
+    }
+
+    .item-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .item-date {
+      font-size: 0.85rem;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--text-dim);
+    }
+
+    .tag {
+      font-size: 0.7rem;
+      background: var(--border);
+      padding: 4px 10px;
+      border-radius: 4px;
+      color: var(--text-main);
+      font-family: 'JetBrains Mono', monospace;
+      text-transform: uppercase;
     }
 
     code {
       font-family: 'JetBrains Mono', monospace;
       color: var(--accent);
-      background: rgba(56, 189, 248, 0.1);
+      background: var(--accent-glow);
       padding: 2px 6px;
       border-radius: 4px;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
     }
 
-    /* Project Styling */
-    .project {
-      margin-bottom: 2rem;
-    }
-
-    .project-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .project-tags {
-      margin-top: 10px;
-    }
-
-    .tag {
-      font-size: 0.75rem;
-      background: var(--border);
-      padding: 3px 8px;
-      border-radius: 4px;
-      margin-right: 5px;
-      color: var(--text-dim);
-    }
-
-    /* Lab Status Section */
-    .lab-box {
-      background: linear-gradient(145deg, #1e293b, #111827);
-      border: 1px solid var(--accent);
-      padding: 1.5rem;
-      border-radius: 8px;
-    }
-
-    /* Buttons */
     .btn {
       display: inline-flex;
-      align-items: center;
-      padding: 0.8rem 1.5rem;
+      padding: 0.6rem 1.2rem;
       background: var(--accent);
       color: var(--bg);
       text-decoration: none;
-      border-radius: 6px;
-      font-weight: 700;
-      transition: all 0.3s ease;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: opacity 0.2s;
     }
 
-    .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px var(--accent-glow);
+    .btn:hover { opacity: 0.9; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
     }
 
-    .secondary-btn {
-      background: transparent;
-      color: var(--text-main);
-      border: 1px solid var(--border);
-      margin-left: 10px;
-    }
-
-    .secondary-btn:hover {
-      border-color: var(--accent);
+    .skill-box {
+        padding: 1rem;
+        border: 1px solid var(--border);
+        border-radius: 8px;
     }
 
     footer {
       text-align: center;
-      margin-top: 4rem;
+      padding-top: 5rem;
       color: var(--text-dim);
-      font-size: 0.85rem;
+      font-size: 0.8rem;
+      font-family: 'JetBrains Mono', monospace;
     }
 
     @media (max-width: 600px) {
-      header h1 { font-size: 2rem; }
-      .container { padding: 1.5rem; }
+      header h1 { font-size: 2.5rem; }
+      .item-header { flex-direction: column; }
     }
   </style>
 </head>
-
 <body>
 
 <div class="container">
-
   <header>
     <h1>Paul Cumiskey</h1>
-    <div class="subtitle">Cybersecurity | SOC Operations | BTL1 • CySA+ • Sec+</div>
-    <p style="color: var(--text-dim); max-width: 600px;">
-      Graduating May 2026. Specialized in Blue Team operations, SIEM engineering, and defensive security. Currently interning at <b>Valor Cybersecurity</b>.
+    <div class="subtitle">Security Operations & Detection Engineering</div>
+    <p style="color: var(--text-dim); max-width: 650px; font-size: 1.1rem;">
+      Cybersecurity senior at Old Dominion University specializing in defensive architecture, SIEM engineering, and incident response. BTL1, CySA+, and Security+ certified.
     </p>
-<nav style="display: flex; gap: 20px; margin-bottom: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 1rem;">
-    <a href="index.html" style="color: var(--accent); text-decoration: none; font-weight: 600;">Home</a>
-    <a href="#writeups" style="color: var(--text-dim); text-decoration: none;">Technical Writeups</a>
-</nav>
-    <div class="card">
-  <h2>📝 Professional Summary</h2>
-  <p>
-    Dedicated Cybersecurity Senior graduating in <b>May 2026</b> with a focus on Blue Team operations and incident response. 
-    Armed with <b>BTL1, CySA+, and Security+</b>, I combine academic rigor with hands-on lab experience in SIEM deployment and 
-    automated threat detection. Proven ability to handle high-pressure environments through both technical internships 
-    and fast-paced professional roles.
-  </p>
-</div>
-<div class="card">
-  <h2>🎓 Education</h2>
-  <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-    <div>
-      <h3 style="margin: 0; color: var(--accent);">Old Dominion University</h3>
-      <p style="margin: 5px 0; font-weight: 600;">Bachelor of Science in Cybersecurity</p>
-      <p style="margin: 0; color: var(--text-dim); font-size: 0.9rem;">
-        National Center of Academic Excellence in Cybersecurity (CAE-CD)
-      </p>
-    </div>
-    <div style="text-align: right;">
-      <span class="tag" style="background: #fbbf24; color: #000; font-weight: 700;">GPA: 3.8 / 4.0</span>
-      <p style="margin: 5px 0; font-size: 0.9rem;">Expected May 2026</p>
-    </div>
-  </div>
-
-  <div style="margin-top: 1.5rem;">
-    <p><strong>Honors & Recognition:</strong> Dean's List | ODU Honors College Member</p>
     
-    <h4 style="margin-bottom: 10px; color: var(--text-main); font-size: 1rem;">Key Technical Coursework:</h4>
-    <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; font-size: 0.85rem;">
-      <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 6px;">
-        <b style="color: var(--accent);">Cyber Defense Operations</b><br>
-        Focus on incident response, blue team tactics, and hardening enterprise networks.
-      </div>
-      <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 6px;">
-        <b style="color: var(--accent);">Network Security & Cryptography</b><br>
-        Deep dive into secure protocols, encryption standards, and traffic analysis.
-      </div>
-      <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 6px;">
-        <b style="color: var(--accent);">Digital Forensics</b><br>
-        Practical experience with evidence acquisition, file system analysis, and artifact recovery.
-      </div>
-      <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 6px;">
-        <b style="color: var(--accent);">Ethical Hacking & Pen Testing</b><br>
-        Understanding the adversary mindset to better inform defensive strategies.
-      </div>
-    </div>
-  </div>
-
-  <div style="margin-top: 1.5rem; padding: 15px; background: rgba(56, 189, 248, 0.05); border-left: 3px solid var(--accent); border-radius: 4px;">
-    <p style="margin: 0;"><strong>Senior Capstone Project:</strong> Currently performing qualitative risk analysis and defensive architecture design for simulated enterprise environments.</p>
-  </div>
-</div>
-<div class="card">
-  <h2>💼 Experience</h2>
-  
-  <div style="margin-bottom: 1.5rem;">
-    <div style="display: flex; justify-content: space-between;">
-      <strong>Cybersecurity Intern | Valor Cybersecurity</strong>
-      <span>Dec 2025 – Present</span>
-    </div>
-    <ul style="margin-top: 5px;">
-      <li>Supported Governance, Risk, and Compliance (GRC) initiatives and documentation.</li>
-      <li>Assisted in the deployment and configuration of EDR and SIEM solutions.</li>
-      <li>Collaborated on qualitative risk analysis for enterprise-level projects.</li>
-    </ul>
-  </div>
-
-  <div>
-    <div style="display: flex; justify-content: space-between;">
-      <strong>Baker (Overnight) | Wegmans</strong>
-      <span>Aug 2023 - Present</span>
-    </div>
-    <ul style="margin-top: 5px;">
-      <li>Managed high-volume production schedules during autonomous overnight shifts.</li>
-      <li>Demonstrated extreme attention to detail and adherence to strict safety/operational SOPs.</li>
-    </ul>
-  </div>
-</div>
-    <div style="margin-top: 20px;">
-        <a href="https://github.com/PaulCumiskey" class="btn">GitHub</a>
-        <a href="https://www.linkedin.com/in/paul-cumiskey-09a2b3336/" class="btn secondary-btn">LinkedIn</a>
-    </div>
+    <nav class="nav-links">
+      <a href="https://github.com/PaulCumiskey">GitHub</a>
+      <a href="https://www.linkedin.com/in/paul-cumiskey-09a2b3336/">LinkedIn</a>
+      <a href="#writeups">Technical Writeups</a>
+    </nav>
   </header>
 
-  <div class="card">
-    <h2>📡 Active Home Lab</h2>
-    <div class="lab-box">
-        <p><strong>Environment:</strong> Proxmox VE running Windows Server (AD/DC), Ubuntu, and Kali Linux.</p>
-        <p><strong>Security Stack:</strong> Splunk Enterprise (Heavy Forwarder Setup), Sysmon for telemetry, Snort for NIDS, and Shuffle for SOAR automation.</p>
-        <p style="margin-bottom: 0;"><small><em>"I treat my home network like an enterprise environment to test detection bypasses."</em></small></p>
-    </div>
-  </div>
+  <section class="card">
+    <h2>Professional Profile</h2>
+    <p>
+      I focus on bridging the gap between raw telemetry and actionable intelligence. Currently finishing a Bachelor of Science in Cybersecurity, I maintain an enterprise-grade home lab to simulate real-world attack vectors. My background combines technical precision in SIEM/EDR deployment with the operational discipline of high-volume, autonomous work environments.
+    </p>
+  </section>
 
-  <div class="card">
-    <h2>🛠️ Technical Proficiency</h2>
-    <div class="skills-wrapper">
-      <div class="skill-category">
-        <h3>Analysis</h3>
-        <code>Splunk (SIEM)</code><br>
-        <code>Wireshark</code><br>
-        <code>BTL1 Methodologies</code>
-      </div>
-      <div class="skill-category">
-        <h3>Engineering</h3>
-        <code>EDR Solutions</code><br>
-        <code>SIEM Deployment</code><br>
-        <code>GRC Compliance</code>
-      </div>
-      <div class="skill-category">
-        <h3>Scripting</h3>
-        <code>Python</code><br>
-        <code>PowerShell</code><br>
-        <code>Bash</code>
-      </div>
-    </div>
-  </div>
-
- <div class="card">
-  <h2>🚀 Featured Defensive Projects</h2>
-
-  <div class="project-item">
-    <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-      <h3 style="margin: 0; color: var(--accent);">Enterprise Detection Lab & SIEM Engineering</h3>
-      <a href="https://github.com/PaulCumiskey/Detection-Lab" class="tag" style="text-decoration: none; border: 1px solid var(--accent);">View Repository →</a>
-    </div>
+  <section class="card">
+    <h2>Core Experience</h2>
     
-    <p style="margin-top: 10px;">
-      Built a multi-stage virtualized environment to simulate enterprise-level telemetry ingestion and monitoring.
-    </p>
-
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 15px 0;">
-      <div style="background: rgba(255,255,255,0.03); padding: 15px; border-radius: 8px;">
-        <strong style="color: var(--text-main); font-size: 0.9rem;">The Build</strong>
-        <ul style="font-size: 0.85rem; color: var(--text-dim); padding-left: 18px; margin-top: 5px;">
-          <li>Configured <b>Windows Event Forwarding (WEF)</b> and <b>Sysmon</b> for granular endpoint visibility.</li>
-          <li>Deployed <b>Splunk Enterprise</b> as a central indexer for logs from AD, Ubuntu, and Suricata.</li>
-        </ul>
+    <div class="exp-item">
+      <div class="item-header">
+        <span class="item-title">Cybersecurity Intern | Valor Cybersecurity</span>
+        <span class="item-date">Dec 2025 — Present</span>
       </div>
-      <div style="background: rgba(255,255,255,0.03); padding: 15px; border-radius: 8px;">
-        <strong style="color: var(--text-main); font-size: 0.9rem;">The Detection</strong>
-        <ul style="font-size: 0.85rem; color: var(--text-dim); padding-left: 18px; margin-top: 5px;">
-          <li>Developed custom SPL queries to identify <b>Pass-the-Hash</b> and <b>Golden Ticket</b> attacks.</li>
-          <li>Created visualization dashboards to track failed logins and lateral movement.</li>
-        </ul>
+      <p style="color: var(--text-dim); margin-top: 0.2rem;">
+        Focusing on GRC documentation and defensive tool configuration. Assisted in optimizing SIEM/EDR alert logic and performing risk assessments for enterprise environments.
+      </p>
+    </div>
+
+    <div class="exp-item">
+      <div class="item-header">
+        <span class="item-title">Overnight Operations | Wegmans</span>
+        <span class="item-date">Aug 2023 — Present</span>
+      </div>
+      <p style="color: var(--text-dim); margin-top: 0.2rem;">
+        Managing high-volume production schedules in autonomous overnight shifts. This role requires strict adherence to SOPs, high attention to detail, and independent problem-solving—skills I translate directly to SOC monitoring and incident response.
+      </p>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Technical Skills</h2>
+    <div class="grid">
+      <div class="skill-box">
+        <strong style="display:block; margin-bottom: 10px;">Security Ops</strong>
+        <code>Splunk</code> <code>Sysmon</code> <code>Wireshark</code> <code>BTL1 Methodologies</code> <code>EDR/SIEM Deployment</code>
+      </div>
+      <div class="skill-box">
+        <strong style="display:block; margin-bottom: 10px;">Engineering</strong>
+        <code>Python</code> <code>PowerShell</code> <code>Bash</code> <code>Proxmox VE</code> <code>Active Directory</code>
       </div>
     </div>
-  </div>
+  </section>
 
-  <hr style="border: 0; border-top: 1px solid var(--border); margin: 2rem 0;">
-
-  <div class="project-item">
-    <h3 style="margin: 0; color: var(--accent);">Automated Incident Response Pipeline (SOAR)</h3>
-    <p style="margin-top: 10px;">
-      Designed a workflow to reduce "Alert Fatigue" by automating the triage of suspicious network indicators.
-    </p>
-
-    <div style="margin: 15px 0; padding: 15px; background: rgba(56, 189, 248, 0.05); border-radius: 8px; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem;">
-       <span style="color: var(--accent);">[Flow]</span> Splunk Alert -> Shuffle SOAR -> VirusTotal API -> TheHive (Case Creation)
-    </div>
-
-    <ul style="font-size: 0.9rem; color: var(--text-dim);">
-      <li><b>Automation Logic:</b> Built a Python-integrated workflow that extracts IOCs (IPs/Hashes) from incoming alerts.</li>
-      <li><b>Enrichment:</b> The system automatically queries <b>VirusTotal</b> and <b>AbuseIPDB</b>, adding reputation scores to the ticket before an analyst even opens it.</li>
-      <li><b>Impact:</b> Reduced initial triage time by approximately 70% per alert.</li>
-    </ul>
-  </div>
-
-  <hr style="border: 0; border-top: 1px solid var(--border); margin: 2rem 0;">
-
-  <div class="project-item">
-    <h3 style="margin: 0; color: var(--accent);">Network Traffic Analysis & NIDS Deployment</h3>
-    <p style="margin-top: 10px;">
-      Focuses on real-time packet inspection and identifying command-and-control (C2) traffic patterns.
-    </p>
-    <ul style="font-size: 0.9rem; color: var(--text-dim);">
-      <li>Utilized <b>Wireshark</b> and <b>Zeek</b> to analyze PCAP files from simulated malware infections (e.g., Emotet).</li>
-      <li>Configured <b>Suricata</b> rules to alert on non-standard port usage and suspicious DNS tunneling attempts.</li>
-      <li>Documented a technical write-up on identifying beaconing behavior through periodic traffic spikes.</li>
-    </ul>
-  </div>
-</div>
-
-  <div class="card">
-  <h2>📜 Professional Certifications</h2>
-
-  <div class="cert-item" style="margin-bottom: 2rem;">
-    <div style="display: flex; align-items: center; gap: 10px;">
-      <h3 style="margin: 0; color: var(--accent);">Blue Team Level 1 (BTL1)</h3>
-      <span class="tag" style="background: rgba(56, 189, 248, 0.2); color: var(--accent);">Practical Assessment</span>
-    </div>
-    <p style="margin-top: 10px;">
-      A junior-level, 100% practical certification focused on technical domains essential for modern SOC operations. To earn this, I completed a <b>24-hour incident response examination</b>, performing live forensic analysis, log investigation, and threat hunting.
-    </p>
-    <ul style="font-size: 0.9rem; color: var(--text-dim);">
-      <li><b>Domains:</b> Phishing Analysis, Digital Forensics, SIEM (Splunk), and Incident Response.</li>
-      <li><b>Key Skill:</b> Ability to pivot through logs to reconstruct an attacker's timeline of events.</li>
-    </ul>
-  </div>
-
-  <hr style="border: 0; border-top: 1px solid var(--border); margin: 1.5rem 0;">
-
-  <div class="cert-item" style="margin-bottom: 2rem;">
-    <div style="display: flex; align-items: center; gap: 10px;">
-      <h3 style="margin: 0; color: var(--accent);">CompTIA Cybersecurity Analyst (CySA+)</h3>
-      <span class="tag" style="background: rgba(56, 189, 248, 0.2); color: var(--accent);">Analytical Focus</span>
-    </div>
-    <p style="margin-top: 10px;">
-      An intermediate-level certification that validates the knowledge required to monitor and combat high-stakes security threats through continuous security monitoring and behavior analysis.
-    </p>
-    <ul style="font-size: 0.9rem; color: var(--text-dim);">
-      <li><b>Domains:</b> Threat Intelligence, Vulnerability Management, and Compliance Frameworks.</li>
-      <li><b>Key Skill:</b> Applying environmental reconnaissance and threat identification to secure organizational assets.</li>
-    </ul>
-  </div>
-
-  <hr style="border: 0; border-top: 1px solid var(--border); margin: 1.5rem 0;">
-
-  <div class="cert-item">
-    <div style="display: flex; align-items: center; gap: 10px;">
-      <h3 style="margin: 0; color: var(--accent);">CompTIA Security+</h3>
-      <span class="tag" style="background: rgba(56, 189, 248, 0.2); color: var(--accent);">Foundational Standard</span>
-    </div>
-    <p style="margin-top: 10px;">
-      The global benchmark for best practices in IT network and operational security. This certification proves a mastery of core cybersecurity principles required for any professional security role.
-    </p>
-    <ul style="font-size: 0.9rem; color: var(--text-dim);">
-      <li><b>Domains:</b> Cryptography, Network Security, and Operational Identity Management.</li>
-      <li><b>Key Skill:</b> Understanding the "why" behind security controls and defensive architecture.</li>
-    </ul>
-  </div>
-</div>
-
-  <div class="card" style="text-align: center; background: transparent; border: 2px dashed var(--border);">
-    <h2>📫 Get In Touch</h2>
-    <p>Currently open to Tier 1/2 SOC Analyst opportunities and Security Engineering roles.</p>
-    <p><strong>Email:</strong> pcumiskey77@gmail.com</p>
-    <p><strong>Location:</strong> Norfolk, VA / Remote</p>
-  </div>
-<div class="card" id="writeups">
-  <h2>✍️ Technical Writeups & Lab Reports</h2>
-  <p style="color: var(--text-dim); margin-bottom: 1.5rem;">
-    Deep dives into malware analysis, forensic investigations, and detection engineering. 
-  </p>
-
-  <div class="grid">
-    <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); padding: 1.5rem; border-radius: 8px; display: flex; flex-direction: column;">
-      <span class="tag" style="width: fit-content; margin-bottom: 10px;">Forensics</span>
-      <h3 style="margin: 0; font-size: 1.1rem; color: var(--accent);">BTL1 Lab: Phishing Investigation</h3>
-      <p style="font-size: 0.85rem; color: var(--text-dim); flex-grow: 1;">
-        Analyzing a suspicious email to extract headers, identify malicious attachments, and trace the C2 callback.
+  <section class="card">
+    <h2>Featured Projects</h2>
+    
+    <div class="project-item">
+      <div class="item-header">
+        <span class="item-title">Enterprise Detection Lab</span>
+        <a href="#" style="color: var(--accent); text-decoration: none; font-size: 0.8rem;">View Source →</a>
+      </div>
+      <p>
+        Built a virtualized enterprise network using Proxmox to test detection capabilities. Configured Windows Event Forwarding (WEF) and Splunk to identify lateral movement and Golden Ticket attacks.
       </p>
-      <a href="writeups.html" class="btn" style="margin-top: 15px; font-size: 0.8rem; text-align: center;">Read Full Report →</a>
     </div>
 
-    <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); padding: 1.5rem; border-radius: 8px; display: flex; flex-direction: column;">
-      <span class="tag" style="width: fit-content; margin-bottom: 10px; border-color: #10b981; color: #10b981;">Detection</span>
-      <h3 style="margin: 0; font-size: 1.1rem; color: var(--accent);">Splunk: Detecting Brute Force</h3>
-      <p style="font-size: 0.85rem; color: var(--text-dim); flex-grow: 1;">
-        Developing SPL queries to alert on Event ID 4625 patterns while filtering out false positives from service accounts.
+    <div class="project-item">
+      <div class="item-header">
+        <span class="item-title">SOAR Automation Pipeline</span>
+      </div>
+      <p>
+        Reduced triage time by 70% by integrating Shuffle SOAR with VirusTotal and AbuseIPDB. The system automatically enriches alerts and opens cases in TheHive, allowing analysts to focus on investigation rather than manual data entry.
       </p>
-      <a href="writeups.html" class="btn" style="margin-top: 15px; font-size: 0.8rem; text-align: center;">Read Full Report →</a>
     </div>
+  </section>
 
-    <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); padding: 1.5rem; border-radius: 8px; display: flex; flex-direction: column;">
-      <span class="tag" style="width: fit-content; margin-bottom: 10px; border-color: #a855f7; color: #a855f7;">Networking</span>
-      <h3 style="margin: 0; font-size: 1.1rem; color: var(--accent);">Analyzing Emotet Traffic</h3>
-      <p style="font-size: 0.85rem; color: var(--text-dim); flex-grow: 1;">
-        Using Wireshark to identify HTTP beaconing and the initial infection vector from a packet capture.
-      </p>
-      <a href="writeups.html" class="btn" style="margin-top: 15px; font-size: 0.8rem; text-align: center;">Read Full Report →</a>
+  <section class="card" id="writeups">
+    <h2>Certifications</h2>
+    <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+      <span class="tag">Blue Team Level 1 (BTL1)</span>
+      <span class="tag">CompTIA CySA+</span>
+      <span class="tag">CompTIA Security+</span>
     </div>
-  </div>
-</div>
-  
+  </section>
 
   <footer>
-    &copy; 2026 Paul Cumiskey | Graduating May 2026
+    &copy; 2026 Paul Cumiskey | B.S. Cybersecurity, Old Dominion University
   </footer>
-
 </div>
 
 </body>
