@@ -124,6 +124,8 @@
       padding: 2px 6px;
       border-radius: 4px;
       font-size: 0.85rem;
+      margin-bottom: 4px;
+      display: inline-block;
     }
 
     .btn {
@@ -173,7 +175,7 @@
     <h1>Paul Cumiskey</h1>
     <div class="subtitle">Security Operations & Detection Engineering</div>
     <p style="color: var(--text-dim); max-width: 650px; font-size: 1.1rem;">
-      Cybersecurity senior at Old Dominion University specializing in defensive architecture, SIEM engineering, and incident response. BTL1, CySA+, and Security+ certified.
+      Cybersecurity graduate from Old Dominion University specializing in defensive architecture, SIEM engineering, and incident response. BTL1, CySA+, and Security+ certified.
     </p>
     
     <nav class="nav-links">
@@ -186,7 +188,7 @@
   <section class="card">
     <h2>Professional Profile</h2>
     <p>
-      I focus on bridging the gap between raw telemetry and actionable intelligence. Currently finishing a Bachelor of Science in Cybersecurity, I maintain an enterprise-grade home lab to simulate real-world attack vectors. My background combines technical precision in SIEM/EDR deployment with the operational discipline of high-volume, autonomous work environments.
+      I focus on bridging the gap between raw telemetry and actionable intelligence. Armed with a Bachelor of Science in Cybersecurity, I maintain an enterprise-grade home lab to simulate real-world attack vectors. My background combines technical precision in SIEM deployment, log management, and SOAR automation with the operational discipline required for high-volume, autonomous work environments.
     </p>
   </section>
 
@@ -218,12 +220,12 @@
     <h2>Technical Skills</h2>
     <div class="grid">
       <div class="skill-box">
-        <strong style="display:block; margin-bottom: 10px;">Security Ops</strong>
-        <code>Splunk</code> <code>Sysmon</code> <code>Wireshark</code> <code>BTL1 Methodologies</code> <code>EDR/SIEM Deployment</code>
+        <strong style="display:block; margin-bottom: 10px;">Security Ops & SIEM</strong>
+        <code>Splunk</code> <code>Elastic</code> <code>Wazuh</code> <code>Sysmon</code> <code>Wireshark</code> <code>BTL1 Methodologies</code>
       </div>
       <div class="skill-box">
-        <strong style="display:block; margin-bottom: 10px;">Engineering</strong>
-        <code>Python</code> <code>PowerShell</code> <code>Bash</code> <code>Proxmox VE</code> <code>Active Directory</code>
+        <strong style="display:block; margin-bottom: 10px;">Automation & Engineering</strong>
+        <code>TheHive</code> <code>Shuffle SOAR</code> <code>Cassandra</code> <code>Python</code> <code>Active Directory</code>
       </div>
     </div>
   </section>
@@ -233,20 +235,21 @@
     
     <div class="project-item">
       <div class="item-header">
-        <span class="item-title">Enterprise Detection Lab</span>
-        <a href="#" style="color: var(--accent); text-decoration: none; font-size: 0.8rem;">View Source →</a>
+        <span class="item-title">Endpoint Telemetry & Detection Lab</span>
+        <a href="https://github.com/PaulCumiskey" style="color: var(--accent); text-decoration: none; font-size: 0.8rem;">View Source →</a>
       </div>
       <p>
-        Built a virtualized enterprise network using Proxmox to test detection capabilities. Configured Windows Event Forwarding (WEF) and Splunk to identify lateral movement and Golden Ticket attacks.
+        Architected a dedicated threat detection environment utilizing <strong>Splunk</strong> as the core SIEM. Configured <strong>Sysmon</strong> on Windows endpoints to capture granular telemetry (Process Creation, Network Connections) and engineered basic detection logic to identify anomalous behaviors and simulate threat hunting operations.
       </p>
     </div>
 
     <div class="project-item">
       <div class="item-header">
-        <span class="item-title">SOAR Automation Pipeline</span>
+        <span class="item-title">Full-Stack SOC Automation Pipeline</span>
+        <a href="https://github.com/PaulCumiskey" style="color: var(--accent); text-decoration: none; font-size: 0.8rem;">View Source →</a>
       </div>
       <p>
-        Reduced triage time by 70% by integrating Shuffle SOAR with VirusTotal and AbuseIPDB. The system automatically enriches alerts and opens cases in TheHive, allowing analysts to focus on investigation rather than manual data entry.
+        Built an end-to-end incident response pipeline bridging <strong>Wazuh</strong> and <strong>Elastic</strong> for centralized log management. Integrated <strong>Shuffle SOAR</strong> to automate alert enrichment, which seamlessly opens detailed investigative cases in <strong>TheHive</strong> (backed by a <strong>Cassandra</strong> database), drastically reducing manual triage time for analysts.
       </p>
     </div>
   </section>
@@ -273,20 +276,20 @@
         <div style="margin-bottom: 12px;">
             <span class="tag" style="background: rgba(16, 185, 129, 0.1); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.2);">Detection</span>
         </div>
-        <h3 style="margin: 0 0 10px 0; font-size: 1.1rem; color: var(--text-main);">Splunk: Brute Force Logic</h3>
+        <h3 style="margin: 0 0 10px 0; font-size: 1.1rem; color: var(--text-main);">Splunk: Sysmon Telemetry</h3>
         <p style="font-size: 0.85rem; color: var(--text-dim); flex-grow: 1; margin-bottom: 20px;">
-          Developing high-fidelity SPL queries to detect Event ID 4625 spikes. Focused on reducing alert fatigue by excluding known service account patterns.
+          Developing high-fidelity SPL queries utilizing Sysmon Event IDs to detect process injection and suspicious command-line executions.
         </p>
         <a href="writeups.html" class="btn" style="width: 100%; text-align: center; justify-content: center;">Review Investigation</a>
       </div>
 
       <div style="border: 1px solid var(--border); padding: 1.5rem; border-radius: 8px; display: flex; flex-direction: column; background: rgba(255,255,255,0.02);">
         <div style="margin-bottom: 12px;">
-            <span class="tag" style="background: rgba(168, 85, 247, 0.1); color: #a855f7; border: 1px solid rgba(168, 85, 247, 0.2);">Network</span>
+            <span class="tag" style="background: rgba(168, 85, 247, 0.1); color: #a855f7; border: 1px solid rgba(168, 85, 247, 0.2);">Automation</span>
         </div>
-        <h3 style="margin: 0 0 10px 0; font-size: 1.1rem; color: var(--text-main);">Emotet Traffic Analysis</h3>
+        <h3 style="margin: 0 0 10px 0; font-size: 1.1rem; color: var(--text-main);">SOAR Playbook Creation</h3>
         <p style="font-size: 0.85rem; color: var(--text-dim); flex-grow: 1; margin-bottom: 20px;">
-          PCAP deep-dive using Wireshark to identify HTTP beaconing and lateral movement within a compromised subnet.
+          Documenting the creation of Shuffle SOAR workflows to extract observables from Wazuh alerts and push them directly to TheHive.
         </p>
         <a href="writeups.html" class="btn" style="width: 100%; text-align: center; justify-content: center;">Review Investigation</a>
       </div>
